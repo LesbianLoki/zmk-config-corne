@@ -23,17 +23,15 @@
             label = "CTRLALTDEL";
         };
 
-        explorer: new_macro {
+        task_mgr: task_mgr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LWIN &kp R>,
-                <&macro_release>,
-                <&macro_tap>,
-                <&kp E &kp X &kp P &kp L &kp O &kp R &kp E &kp R &kp DOT &kp E &kp X &kp E &kp ENTER>;
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp ESCAPE>,
+                <&macro_release>;
 
-            label = "NEW_MACRO";
+            label = "TASK_MGR";
         };
     };
 
@@ -63,19 +61,19 @@
             //                      | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp CAPS          &kp NUMBER_1  &kp NUMBER_2  &kp N3        &kp N4      &kp N5         &kp N6     &kp N7            &kp N8             &kp N9                &kp N0                 &kp DEL
-&kp LEFT_CONTROL  &kp EXCL      &kp AT        &kp POUND     &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS          &kp STAR           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_ALT
-&kp ESC           &kp PLUS      &kp MINUS     &kp UNDER     &kp EQUAL   &kp PIPE       &kp TILDE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp BACKSLASH          &kp K_APPLICATION
-                                              &kp LEFT_GUI  &sl 1       &kp SPACE      &kp SPACE  &sl 2             &kp ENTER
+&kp CAPS          &kp MINUS  &kp AMPS         &kp STAR      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_SLASH  &kp N7  &kp N8     &kp N9  &kp N0                 &kp DEL
+&kp LEFT_CONTROL  &kp UNDER  &kp DOLLAR       &kp PERCENT   &kp DOLLAR            &kp KP_EQUAL             &kp CARET     &kp N4  &kp N5     &kp N6  &kp RIGHT_PARENTHESIS  &kp LESS_THAN
+&kp ESC           &kp PLUS   &kp EXCLAMATION  &kp AT        &kp HASH              &kp PIPE                 &kp N0        &kp N1  &kp N2     &kp N3  &kp PERIOD             &kp GREATER_THAN
+                                              &kp LEFT_GUI  &sl 1                 &kp SPACE                &kp SPACE     &sl 2   &kp ENTER
             >;
         };
 
         raise_layer {
             bindings = <
-&kp F1   &kp F2           &kp F3         &kp F4          &kp F5       &kp F6         &kp F7     &kp F8  &kp F9     &kp F10  &kp F11  &kp F12
-&kp ESC  &kp PRINTSCREEN  &kp C_AC_SAVE  &kp C_AC_PRINT  &trans       &kp K_UNDO     &trans     &trans  &trans     &trans   &trans   &explorer
-&kp TAB  &kp C_PAUSE      &kp PG_DN      &kp K_COPY      &kp K_PASTE  &kp K_AGAIN    &sl 3      &trans  &trans     &trans   &trans   &ctrlaltdel
-                                         &kp LEFT_WIN    &sl 1        &kp SPACE      &kp SPACE  &sl 2   &kp ENTER
+&kp F1   &kp F2           &kp F3  &kp F4        &kp F5  &kp F6       &kp F7     &kp F8  &kp F9     &kp F10  &kp F11  &kp F12
+&kp ESC  &kp PRINTSCREEN  &trans  &trans        &trans  &trans       &trans     &trans  &trans     &trans   &trans   &task_mgr
+&kp TAB  &kp C_PAUSE      &trans  &trans        &trans  &trans       &sl 3      &trans  &trans     &trans   &trans   &ctrlaltdel
+                                  &kp LEFT_WIN  &sl 1   &kp SPACE    &kp SPACE  &sl 2   &kp ENTER
             >;
         };
 
