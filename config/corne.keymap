@@ -110,6 +110,17 @@
 
             label = "REDO";
         };
+
+        saveas: saveas {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp S>,
+                <&macro_release>;
+
+            label = "SAVEAS";
+        };
     };
 
     keymap {
@@ -123,10 +134,10 @@
             //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
 
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp LEFT_CONTROL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LGUI  &sl 1  &kp SPACE    &kp SPACE  &sl 2  &kp RET
+&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                              &kp LGUI  &sl 1  &kp SPACE    &kp SPACE  &sl 2  &kp RET
             >;
         };
 
@@ -138,19 +149,19 @@
             //                      | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp CAPS          &kp MINUS  &kp AMPS         &kp STAR      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_SLASH  &kp N7  &kp N8     &kp N9  &kp N0                 &kp DEL
-&kp LEFT_CONTROL  &kp UNDER  &kp DOLLAR       &kp PERCENT   &kp DOLLAR            &kp KP_EQUAL             &kp CARET     &kp N4  &kp N5     &kp N6  &kp RIGHT_PARENTHESIS  &kp LESS_THAN
-&kp ESC           &kp PLUS   &kp EXCLAMATION  &kp AT        &kp HASH              &kp PIPE                 &kp N0        &kp N1  &kp N2     &kp N3  &kp PERIOD             &kp GREATER_THAN
-                                              &kp LEFT_GUI  &sl 1                 &kp SPACE                &kp SPACE     &sl 2   &kp ENTER
+&kp CAPS        &trans     &kp AMPS         &kp STAR      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp K_CALC  &kp N7  &kp N8     &kp N9  &kp PLUS    &kp MINUS
+&kp LEFT_SHIFT  &trans     &kp DOLLAR       &kp PERCENT   &kp CARET             &kp LEFT_BRACKET         &trans      &kp N4  &kp N5     &kp N6  &kp SLASH   &kp ASTRK
+&kp ESC         &kp UNDER  &kp EXCLAMATION  &kp AT        &kp HASH              &kp RIGHT_BRACKET        &kp N0      &kp N1  &kp N2     &kp N3  &kp PERIOD  &trans
+                                            &kp LEFT_GUI  &sl 1                 &kp SPACE                &kp SPACE   &sl 2   &kp ENTER
             >;
         };
 
         raise_layer {
             bindings = <
-&kp F1   &kp F2  &kp F3  &kp F4        &kp F5  &kp F6       &kp F7     &kp F8  &kp F9     &kp F10  &kp F11          &kp F12
-&kp ESC  &all    &save   &trans        &trans  &trans       &trans     &trans  &trans     &trans   &kp C_PAUSE      &task_mgr
-&kp TAB  &undo   &cut    &copy         &paste  &redo        &sl 3      &trans  &trans     &trans   &kp PRINTSCREEN  &ctrlaltdel
-                         &kp LEFT_WIN  &sl 1   &kp SPACE    &kp SPACE  &sl 2   &kp ENTER
+&kp ESCAPE    &kp F2  &kp F3  &kp F4        &kp F5  &kp F6       &trans     &kp INS   &kp UP_ARROW  &kp DELETE  &trans           &saveas
+&kp CAPSLOCK  &all    &save   &trans        &trans  &trans       &trans     &kp LEFT  &sl 3         &kp RIGHT   &kp C_PAUSE      &task_mgr
+&kp LCTRL     &undo   &cut    &copy         &paste  &redo        &trans     &trans    &kp DOWN      &trans      &kp PRINTSCREEN  &ctrlaltdel
+                              &kp LEFT_WIN  &sl 1   &kp SPACE    &kp SPACE  &sl 2     &kp ENTER
             >;
         };
 
