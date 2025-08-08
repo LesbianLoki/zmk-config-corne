@@ -134,43 +134,28 @@
             //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_CONTROL
-                              &kp LGUI  &sl 1  &kp SPACE    &kp SPACE  &sl 2  &kp RET
+&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_ALT
+                              &kp LGUI  &sl 0  &kp SPACE    &lt 2 SPACE  &sl 0  &kp RET
             >;
         };
 
         lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1    |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | LCTRL| BTCLR | BT0 | BT1 | BT2 | BT3 |   | LFT | DWN |  UP | RGT |     |      |
-            // | ESC  |       | HOME| PGUP| PGDN| END |   |     |     |     |     |     |      |
-            //                      | GUI |     | SPC |   | ENT |     | ALT |
-
             bindings = <
-&kp ESCAPE      &kp CAPSLOCK  &kp AMPS         &kp STAR      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp K_CALC  &kp N7  &kp N8     &kp N9  &kp SLASH   &kp MINUS
-&kp LEFT_SHIFT  &kp HOME      &kp DOLLAR       &kp PERCENT   &kp CARET             &kp LEFT_BRACKET         &kp UNDER   &kp N4  &kp N5     &kp N6  &kp STAR    &kp PLUS
-&kp LCTRL       &kp END       &kp EXCLAMATION  &kp AT        &kp HASH              &kp RIGHT_BRACKET        &kp N0      &kp N1  &kp N2     &kp N3  &kp PERIOD  &kp ENTER
-                                               &kp LEFT_GUI  &sl 1                 &kp SPACE                &kp SPACE   &sl 2   &kp ENTER
-            >;
-        };
-
-        raise_layer {
-            bindings = <
-&kp ESCAPE    &kp F2  &kp F3  &kp F4        &kp F5  &kp F6       &redo      &kp INS   &kp UP_ARROW  &kp DELETE  &trans           &saveas
-&kp CAPSLOCK  &all    &save   &trans        &trans  &trans       &trans     &kp LEFT  &sl 3         &kp RIGHT   &kp C_PAUSE      &task_mgr
-&kp LCTRL     &undo   &cut    &copy         &paste  &trans       &trans     &trans    &kp DOWN      &trans      &kp PRINTSCREEN  &ctrlaltdel
-                              &kp LEFT_WIN  &sl 1   &kp SPACE    &kp SPACE  &sl 2     &kp ENTER
+&kp ESCAPE      &kp CAPS      &none  &none         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp MINUS    &kp N7        &kp N8        &kp N9        &kp N0     &kp BACKSPACE
+&kp LEFT_SHIFT  &kp DELETE    &none  &none         &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &kp UNDER    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS   &kp MINUS
+&kp RCTRL       &kp LEFT_ALT  &none  &none         &kp LEFT_BRACE        &kp RIGHT_BRACE          &none        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH  &kp KP_DOT
+                                     &kp LEFT_GUI  &sl 1                 &kp SPACE                &lt 2 SPACE  &sl 1         &kp ENTER
             >;
         };
 
         keyfunc_layer {
             bindings = <
-&trans  &trans  &kp F1  &kp F2        &kp F3   &kp F4       &trans     &trans  &trans     &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_COLOR_HSB(268,100,50)
-&trans  &trans  &kp F5  &kp F6        &kp F7   &kp F8       &trans     &trans  &sl 3      &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_COLOR_HSB(330,100,50)
-&trans  &trans  &kp F9  &kp F10       &kp F11  &kp F12      &trans     &trans  &trans     &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(0,100,50)
-                        &kp LEFT_GUI  &sl 1    &kp SPACE    &kp SPACE  &sl 2   &kp ENTER
+&kp ESCAPE       &kp CAPSLOCK     &kp F1  &kp F2        &kp F3   &kp F4       &kp HOME     &kp UP_ARROW  &kp PAGE_UP    &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_COLOR_HSB(268,100,50)
+&kp PRINTSCREEN  &kp PAUSE_BREAK  &kp F5  &kp F6        &kp F7   &kp F8       &kp LEFT     &trans        &kp RIGHT      &sys_reset       &rgb_ug RGB_SPI  &rgb_ug RGB_COLOR_HSB(330,100,50)
+&kp HOME         &kp END          &kp F9  &kp F10       &kp F11  &kp F12      &kp END      &kp DOWN      &kp PAGE_DOWN  &bootloader      &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(0,100,50)
+                                          &kp LEFT_GUI  &sl 1    &kp SPACE    &lt 2 SPACE  &sl 1         &kp ENTER
             >;
         };
     };
